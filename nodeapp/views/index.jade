@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  script(src="/js/bootstrap-slider.js")
+  script(type='text/javascript')
+    $(document).ready(function(){
+
+      var socket = io.connect('/');
+
+      $('.slider').slider({min:0, max:255, step:1, value:0})
+      .on('slide', function(ev){
+        socket.emit('arduino_events', { command: 'wl '+ev.value });
+      });
+    });
+  h1 Demo 1
+  p Slide to change the fading of led
+
+  div(class="slider", style="width:100%")  

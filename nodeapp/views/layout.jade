@@ -1,0 +1,36 @@
+doctype 5
+html
+  head
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/slider.css')
+    style
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+    script(src="/socket.io/socket.io.js")
+
+  body
+    div(class="navbar navbar-inverse navbar-fixed-top")
+      div(class="navbar-inner")
+        div(class="container")
+          button(type="button",class="btn btn-navbar", data-toggle="collapse", data-target=".nav-collapse")
+            span(class="icon-bar")
+            span(class="icon-bar")
+            span(class="icon-bar")
+          a(class="brand", href="#") Project name
+          div(class="nav-collapse collapse")
+            ul(class="nav")
+              li(class="active")
+                a(href="/demo_1") Demo 1
+              li
+                a(href="/demo_2") Demo 2
+              li
+                a(href="/demo_3") Demo 3
+    
+    script(src="http://code.jquery.com/jquery.js")
+    script(src="/js/bootstrap.min.js")
+    div(class="container")  
+      block content
+    
+
